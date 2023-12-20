@@ -1,6 +1,6 @@
 export const GAP = 2;
 
-export const scrollbarStyles = {
+export const scrollbar = {
   "&::-webkit-scrollbar": {
     width: "10px",
   },
@@ -13,4 +13,12 @@ export const scrollbarStyles = {
   },
   scrollbarWidth: "thin",
   scrollbarColor: "brand.gray.base brand.gray.dark",
+};
+
+export const hiddenScrollbar = {
+  scrollbarWidth: "none" /* For Firefox */,
+  msOverflowStyle: "none" /* For Internet Explorer and Edge */,
+  "&::-webkit-scrollbar": {
+    /* For WebKit (Safari, Chrome, etc) */ display: "none",
+  },
 };

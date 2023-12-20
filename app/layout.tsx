@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Providers } from "./providers";
 import { Flex } from "@chakra-ui/react";
 import { GAP } from "@/constants";
-import { Nav } from "@/components";
+import { MobileNav, Nav } from "@/components";
 
 export const metadata: Metadata = {
   title: "Jim Burch | Software Engineer & Creative Pro",
@@ -16,14 +16,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Providers>
-        <body>
-          <Flex as="main" w="100%" h="100vh" gap={GAP} p={GAP}>
+      <body>
+        <Providers>
+          <MobileNav />
+          <Flex
+            as="main"
+            w="full"
+            h={{ base: "full", lg: "100vh" }}
+            gap={GAP}
+            p={{ base: 0, lg: GAP }}
+          >
             <Nav />
             {children}
           </Flex>
-        </body>
-      </Providers>
+        </Providers>
+      </body>
     </html>
   );
 }

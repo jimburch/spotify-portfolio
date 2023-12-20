@@ -1,3 +1,4 @@
+import { GAP } from "@/constants";
 import { AspectRatio, Flex, Image, Text } from "@chakra-ui/react";
 
 export interface CardProps {
@@ -18,13 +19,12 @@ export default function Card({
   return (
     <Flex
       direction="column"
-      // align="center"
-      p={4}
+      p={{ base: 0, lg: 4 }}
       w="full"
       minW={150}
       maxW={200}
-      bg="red"
-      gap={2}
+      bg={{ base: "inherit", lg: "red" }}
+      gap={{ base: 1, lg: GAP }}
       borderRadius="md"
     >
       <AspectRatio ratio={1 / 1} w="full" borderRadius="md" overflow="hidden">

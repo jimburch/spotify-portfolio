@@ -1,20 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
 
-const scrollbarStyles = {
-  "&::-webkit-scrollbar": {
-    width: "10px",
-  },
-  "&::-webkit-scrollbar-track": {
-    background: "brand.gray.dark",
-  },
-  "&::-webkit-scrollbar-thumb": {
-    background: "brand.gray.base",
-    borderRadius: "20px",
-  },
-  scrollbarWidth: "thin",
-  scrollbarColor: "brand.gray.base brand.gray.dark",
-};
-
 export const theme = extendTheme({
   colors: {
     brand: {
@@ -28,15 +13,27 @@ export const theme = extendTheme({
     },
   },
   components: {
-    Flex: {
+    Button: {
       baseStyle: {
-        ...scrollbarStyles,
+        borderRadius: "full",
       },
-    },
-    Box: {
-      baseStyle: {
-        ...scrollbarStyles,
+      variants: {
+        solid: {
+          color: "white",
+          bg: "brand.green",
+          _hover: {
+            bg: "#29E05F",
+          },
+          _active: {
+            bg: "#29E05F",
+          },
+        },
+        secondary: {
+          color: "white",
+          bg: "brand.gray.base",
+        },
       },
+      defaultProps: {},
     },
   },
   styles: {

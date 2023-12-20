@@ -1,5 +1,6 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Flex, Heading } from "@chakra-ui/react";
 import Card, { CardProps } from "../Card/Card";
+import { hiddenScrollbar } from "@/constants";
 
 interface CarouselProps {
   title: string;
@@ -10,7 +11,11 @@ export default function Carousel({ title, cards }: CarouselProps) {
   return (
     <Flex direction="column" gap={4}>
       <Heading>{title}</Heading>
-      <Flex gap={4}>
+      <Flex
+        gap={4}
+        overflowX={{ base: "auto", lg: "inherit" }}
+        sx={hiddenScrollbar}
+      >
         {cards.map((card: CardProps) => (
           <Card
             key={card.title}
