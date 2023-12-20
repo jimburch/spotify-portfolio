@@ -8,15 +8,16 @@ interface CarouselProps {
 
 export default function Carousel({ title, cards }: CarouselProps) {
   return (
-    <Flex direction="column">
+    <Flex direction="column" gap={4}>
       <Heading>{title}</Heading>
-      <Flex>
+      <Flex gap={4}>
         {cards.map((card: CardProps) => (
           <Card
             key={card.title}
-            title={card.title}
             image={card.image}
             alt={card.alt}
+            title={card.title}
+            description={card.description}
             link={card.link}
           />
         ))}

@@ -11,7 +11,6 @@ export default function SlimCard({ image, alt, title, link }: SlimCardProps) {
   return (
     <Flex
       h={65}
-      maxW="sm"
       overflow="hidden"
       borderRadius="md"
       bg="brand.gray.base"

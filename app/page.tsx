@@ -2,13 +2,30 @@ import { Carousel, SlimCard } from "@/components";
 import {
   Box,
   Center,
+  Divider,
   Flex,
   Heading,
   SimpleGrid,
+  Text,
   VStack,
 } from "@chakra-ui/react";
 
 const GAP = 2;
+
+const scrollbarStyles = {
+  "&::-webkit-scrollbar": {
+    width: "10px",
+  },
+  "&::-webkit-scrollbar-track": {
+    background: "brand.gray.dark",
+  },
+  "&::-webkit-scrollbar-thumb": {
+    background: "brand.gray.base",
+    borderRadius: "20px",
+  },
+  scrollbarWidth: "thin",
+  scrollbarColor: "brand.gray.base brand.gray.dark",
+};
 
 export default function Home() {
   return (
@@ -35,6 +52,8 @@ export default function Home() {
           bg="brand.gray.dark"
           borderRadius="md"
           p={GAP}
+          overflowY="auto"
+          sx={scrollbarStyles}
         >
           Other Stuff
         </Box>
@@ -43,14 +62,16 @@ export default function Home() {
         flex="3 1 75%"
         direction="column"
         minW="600px"
-        h="100%"
+        minH="full"
         p={GAP}
         gap={GAP}
         borderRadius="md"
         bg="brand.gray.dark"
+        overflowY="auto"
+        sx={scrollbarStyles}
       >
-        <Flex direction="column" w="100%" maxW={1500} h="100%" p={GAP} gap={4}>
-          <Center w="100%" h={275} bg="brand.green">
+        <Flex direction="column" w="100%" maxW={1500} p={GAP} gap={4}>
+          <Center w="100%" minH={275} bg="brand.green" borderRadius="md">
             Welcome image
           </Center>
           <Heading>Good afternoon</Heading>
@@ -97,42 +118,99 @@ export default function Home() {
             cards={[
               {
                 title: "Card 1",
+                description: "This is a description",
                 image: "https://via.placeholder.com/300x300",
                 alt: "placeholder",
                 link: "#",
               },
               {
                 title: "Card 2",
+                description: "This is a description",
                 image: "https://via.placeholder.com/300x300",
                 alt: "placeholder",
                 link: "#",
               },
               {
                 title: "Card 3",
+                description: "This is a description",
                 image: "https://via.placeholder.com/300x300",
                 alt: "placeholder",
                 link: "#",
               },
               // {
               //   title: "Card 4",
+              //   description: "This is a description",
               //   image: "https://via.placeholder.com/300x300",
               //   alt: "placeholder",
               //   link: "#",
               // },
               // {
               //   title: "Card 5",
+              //   description: "This is a description",
               //   image: "https://via.placeholder.com/300x300",
               //   alt: "placeholder",
               //   link: "#",
               // },
               // {
               //   title: "Card 6",
+              //   description: "This is a description",
               //   image: "https://via.placeholder.com/300x300",
               //   alt: "placeholder",
               //   link: "#",
               // },
             ]}
           />
+          <Carousel
+            title="My Stuff"
+            cards={[
+              {
+                title: "Card 1",
+                description: "This is a description",
+                image: "https://via.placeholder.com/300x300",
+                alt: "placeholder",
+                link: "#",
+              },
+              {
+                title: "Card 2",
+                description: "This is a description",
+                image: "https://via.placeholder.com/300x300",
+                alt: "placeholder",
+                link: "#",
+              },
+              {
+                title: "Card 3",
+                description: "This is a description",
+                image: "https://via.placeholder.com/300x300",
+                alt: "placeholder",
+                link: "#",
+              },
+              // {
+              //   title: "Card 4",
+              //   description: "This is a description",
+              //   image: "https://via.placeholder.com/300x300",
+              //   alt: "placeholder",
+              //   link: "#",
+              // },
+              // {
+              //   title: "Card 5",
+              //   description: "This is a description",
+              //   image: "https://via.placeholder.com/300x300",
+              //   alt: "placeholder",
+              //   link: "#",
+              // },
+              // {
+              //   title: "Card 6",
+              //   description: "This is a description",
+              //   image: "https://via.placeholder.com/300x300",
+              //   alt: "placeholder",
+              //   link: "#",
+              // },
+            ]}
+          />
+        </Flex>
+        <Divider />
+        <Flex w="full" minH={100}>
+          Footer
         </Flex>
       </Flex>
     </Flex>
