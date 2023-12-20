@@ -1,63 +1,10 @@
 import { Carousel, SlimCard } from "@/components";
-import {
-  Box,
-  Center,
-  Divider,
-  Flex,
-  Heading,
-  SimpleGrid,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
-
-const GAP = 2;
-
-const scrollbarStyles = {
-  "&::-webkit-scrollbar": {
-    width: "10px",
-  },
-  "&::-webkit-scrollbar-track": {
-    background: "brand.gray.dark",
-  },
-  "&::-webkit-scrollbar-thumb": {
-    background: "brand.gray.base",
-    borderRadius: "20px",
-  },
-  scrollbarWidth: "thin",
-  scrollbarColor: "brand.gray.base brand.gray.dark",
-};
+import { GAP, scrollbarStyles } from "@/constants";
+import { Center, Divider, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <Flex as="main" w="100%" h="100vh" gap={GAP} p={GAP}>
-      <Flex
-        as="nav"
-        flex="1 1 25%"
-        direction="column"
-        minW="300px"
-        maxW="400px"
-        h="100%"
-        gap={GAP}
-      >
-        <Box w="100%" bg="brand.gray.dark" borderRadius="md" p={GAP}>
-          <VStack spacing={GAP} alignItems="start">
-            <Heading>Home</Heading>
-            <Heading>Github</Heading>
-            <Heading>LinkedIn</Heading>
-          </VStack>
-        </Box>
-        <Box
-          w="100%"
-          height="100%"
-          bg="brand.gray.dark"
-          borderRadius="md"
-          p={GAP}
-          overflowY="auto"
-          sx={scrollbarStyles}
-        >
-          Other Stuff
-        </Box>
-      </Flex>
+    <>
       <Flex
         flex="3 1 75%"
         direction="column"
@@ -213,6 +160,6 @@ export default function Home() {
           Footer
         </Flex>
       </Flex>
-    </Flex>
+    </>
   );
 }
