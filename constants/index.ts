@@ -16,9 +16,9 @@ export const scrollbar = {
 };
 
 export const hiddenScrollbar = {
-  scrollbarWidth: "none" /* For Firefox */,
-  msOverflowStyle: "none" /* For Internet Explorer and Edge */,
+  scrollbarWidth: "none",
+  msOverflowStyle: "none",
   "&::-webkit-scrollbar": {
-    /* For WebKit (Safari, Chrome, etc) */ display: "none",
+    display: "none",
   },
 };

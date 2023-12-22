@@ -10,24 +10,35 @@ export default function Home() {
         direction="column"
         minW={{ base: "none", lg: 600 }}
         minH="full"
-        p={GAP}
+        p={{ base: 0, lg: GAP }}
         gap={GAP}
         borderRadius={{ base: "none", lg: "md" }}
         bg="brand.gray.dark"
         overflowY="auto"
         sx={scrollbar}
       >
-        <Flex direction="column" w="full" maxW={1500} p={GAP} gap={4}>
+        <Flex
+          direction="column"
+          w="full"
+          maxW={1500}
+          p={{ base: 0, lg: GAP }}
+          gap={4}
+        >
           <Center
-            w="full"
+            // w="full"
             minH={{ base: 175, lg: 275 }}
+            mx={{ base: 4, lg: 0 }}
             bg="brand.green"
             borderRadius="md"
           >
             Welcome image
           </Center>
-          <Heading>Good afternoon</Heading>
-          <SimpleGrid columns={{ lg: 3, md: 2 }} spacing={GAP}>
+          <Heading mx={{ base: 4, lg: 0 }}>Good afternoon</Heading>
+          <SimpleGrid
+            columns={{ lg: 3, md: 2 }}
+            spacing={GAP}
+            mx={{ base: 4, lg: 0 }}
+          >
             <SlimCard
               image="https://via.placeholder.com/300x300"
               alt="placeholder"

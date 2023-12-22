@@ -10,15 +10,16 @@ interface CarouselProps {
 export default function Carousel({ title, cards }: CarouselProps) {
   return (
     <Flex direction="column" gap={4}>
-      <Heading>{title}</Heading>
+      <Heading mx={{ base: 4, lg: 0 }}>{title}</Heading>
       <Flex
         gap={4}
         overflowX={{ base: "auto", lg: "inherit" }}
         sx={hiddenScrollbar}
+        pl={{ base: 4, lg: 0 }}
       >
-        {cards.map((card: CardProps) => (
+        {cards.map((card: CardProps, i) => (
           <Card
-            key={card.title}
+            key={i}
             image={card.image}
             alt={card.alt}
             title={card.title}

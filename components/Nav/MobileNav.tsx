@@ -7,10 +7,10 @@ export default function MobileNav() {
   return (
     <Flex
       bg="brand.gray.dark"
-      p={4}
-      pb={0}
       gap={GAP}
       display={{ base: "flex", lg: "none" }}
+      py={4}
+      pl={4}
     >
       <Avatar size="md" />
       <Flex align="center" gap={GAP} overflowX="auto" sx={hiddenScrollbar}>
