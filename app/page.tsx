@@ -1,4 +1,4 @@
-import { Carousel, SlimCard } from "@/components";
+import { Carousel, SlimCard, SlimGrid } from "@/components";
 import { GAP, scrollbar } from "@/constants";
 import { Center, Divider, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
 
@@ -34,48 +34,7 @@ export default function Home() {
             Welcome image
           </Center>
           <Heading mx={{ base: 4, lg: 0 }}>Good afternoon</Heading>
-          <SimpleGrid
-            columns={{ lg: 3, md: 2 }}
-            spacing={GAP}
-            mx={{ base: 4, lg: 0 }}
-          >
-            <SlimCard
-              image="https://via.placeholder.com/300x300"
-              alt="placeholder"
-              title="Slim Card"
-              link="#"
-            />
-            <SlimCard
-              image="https://via.placeholder.com/300x300"
-              alt="placeholder"
-              title="Slim Card"
-              link="#"
-            />
-            <SlimCard
-              image="https://via.placeholder.com/300x300"
-              alt="placeholder"
-              title="Slim Card"
-              link="#"
-            />
-            <SlimCard
-              image="https://via.placeholder.com/300x300"
-              alt="placeholder"
-              title="Slim Card"
-              link="#"
-            />
-            <SlimCard
-              image="https://via.placeholder.com/300x300"
-              alt="placeholder"
-              title="Slim Card"
-              link="#"
-            />
-            <SlimCard
-              image="https://via.placeholder.com/300x300"
-              alt="placeholder"
-              title="Slim Card"
-              link="#"
-            />
-          </SimpleGrid>
+          <SlimGrid />
           <Carousel
             title="My Stuff"
             cards={[
