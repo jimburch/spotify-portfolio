@@ -25,7 +25,6 @@ export default function Home() {
           gap={4}
         >
           <Center
-            // w="full"
             minH={{ base: 175, lg: 275 }}
             mx={{ base: 4, lg: 0 }}
             bg="brand.green"

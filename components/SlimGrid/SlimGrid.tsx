@@ -1,23 +1,12 @@
+import { Suspense } from "react";
 import { SimpleGrid, Skeleton } from "@chakra-ui/react";
 import { SlimCard } from "..";
 import { GAP } from "@/constants";
-import { Suspense } from "react";
+import fetchContentfulEntry from "@/utils/contentful";
 
-async function getData() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
-
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
-
-export default function SlimGrid() {
-  const data = getData();
+export default async function SlimGrid() {
+  const data = await fetchContentfulEntry("4q4bguomgV7FV9HIo5PSk4");
+  const cards = data.fields.slimCards;
 
   const SlimGridSkeleton = () => (
     <SimpleGrid
@@ -38,38 +27,18 @@ export default function SlimGrid() {
         spacing={GAP}
         mx={{ base: 4, lg: 0 }}
       >
-        <Skeleton height={65} borderRadius="md" />
-        <SlimCard
-          image="https://via.placeholder.com/300x300"
-          alt="placeholder"
-          title="Slim Card"
-          link="#"
-        />
-        <SlimCard
-          image="https://via.placeholder.com/300x300"
-          alt="placeholder"
-          title="Slim Card"
-          link="#"
-        />
-        <SlimCard
-          image="https://via.placeholder.com/300x300"
-          alt="placeholder"
-          title="Slim Card"
-          link="#"
-        />
-        <SlimCard
-          image="https://via.placeholder.com/300x300"
-          alt="placeholder"
-          title="Slim Card"
-          link="#"
-        />
-        <SlimCard
-          image="https://via.placeholder.com/300x300"
-          alt="placeholder"
-          title="Slim Card"
-          link="#"
-        />
+        {cards.map((card: any, i: number) => (
+          <SlimCard
+            key={i}
+            image={card.fields.image.fields.file.url}
+            alt={card.fields.image.fields.title}
+            title={card.fields.title}
+            link="#"
+          />
+        ))}
       </SimpleGrid>
     </Suspense>
   );
 }
+
+// figure out Suspense with image loading
