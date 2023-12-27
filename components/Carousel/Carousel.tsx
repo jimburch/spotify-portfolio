@@ -1,13 +1,17 @@
 import { Flex, Heading } from "@chakra-ui/react";
-import Card, { CardProps } from "../Card/Card";
+import Card from "../Card/Card";
 import { hiddenScrollbar } from "@/constants";
+import fetchContentfulEntry from "@/utils/contentful";
 
 interface CarouselProps {
   title: string;
-  cards: CardProps[];
+  entryId: string;
 }
 
-export default function Carousel({ title, cards }: CarouselProps) {
+export default async function Carousel({ title, entryId }: CarouselProps) {
+  const data = await fetchContentfulEntry(entryId);
+  const cards = data.fields.cards;
+
   return (
     <Flex direction="column" gap={4}>
       <Heading mx={{ base: 4, lg: 0 }}>{title}</Heading>
@@ -17,16 +21,19 @@ export default function Carousel({ title, cards }: CarouselProps) {
         sx={hiddenScrollbar}
         pl={{ base: 4, lg: 0 }}
       >
-        {cards.map((card: CardProps, i) => (
-          <Card
-            key={i}
-            image={card.image}
-            alt={card.alt}
-            title={card.title}
-            description={card.description}
-            link={card.link}
-          />
-        ))}
+        {cards.map((card: any, i: number) => {
+          const cardFields = card.fields;
+          return (
+            <Card
+              key={i}
+              image={`https:${cardFields.image.fields.file.url}`}
+              alt={cardFields.title}
+              title={cardFields.title}
+              description={cardFields.description}
+              link={cardFields.link}
+            />
+          );
+        })}
       </Flex>
     </Flex>
   );

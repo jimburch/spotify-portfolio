@@ -1,6 +1,7 @@
-import { Carousel, SlimCard, SlimGrid } from "@/components";
+import { Carousel, SlimGrid } from "@/components";
 import { GAP, scrollbar } from "@/constants";
-import { Center, Divider, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
+import { timeOfDay } from "@/helpers/time";
+import { Center, Divider, Flex, Heading } from "@chakra-ui/react";
 
 export default function Home() {
   return (
@@ -32,102 +33,10 @@ export default function Home() {
           >
             Welcome image
           </Center>
-          <Heading mx={{ base: 4, lg: 0 }}>Good afternoon</Heading>
+          <Heading mx={{ base: 4, lg: 0 }}>{`Good ${timeOfDay()}`}</Heading>
           <SlimGrid />
-          <Carousel
-            title="My Stuff"
-            cards={[
-              {
-                title: "Card 1",
-                description: "This is a description",
-                image: "https://via.placeholder.com/300x300",
-                alt: "placeholder",
-                link: "#",
-              },
-              {
-                title: "Card 2",
-                description: "This is a description",
-                image: "https://via.placeholder.com/300x300",
-                alt: "placeholder",
-                link: "#",
-              },
-              {
-                title: "Card 3",
-                description: "This is a description",
-                image: "https://via.placeholder.com/300x300",
-                alt: "placeholder",
-                link: "#",
-              },
-              // {
-              //   title: "Card 4",
-              //   description: "This is a description",
-              //   image: "https://via.placeholder.com/300x300",
-              //   alt: "placeholder",
-              //   link: "#",
-              // },
-              // {
-              //   title: "Card 5",
-              //   description: "This is a description",
-              //   image: "https://via.placeholder.com/300x300",
-              //   alt: "placeholder",
-              //   link: "#",
-              // },
-              // {
-              //   title: "Card 6",
-              //   description: "This is a description",
-              //   image: "https://via.placeholder.com/300x300",
-              //   alt: "placeholder",
-              //   link: "#",
-              // },
-            ]}
-          />
-          <Carousel
-            title="My Stuff"
-            cards={[
-              {
-                title: "Card 1",
-                description: "This is a description",
-                image: "https://via.placeholder.com/300x300",
-                alt: "placeholder",
-                link: "#",
-              },
-              {
-                title: "Card 2",
-                description: "This is a description",
-                image: "https://via.placeholder.com/300x300",
-                alt: "placeholder",
-                link: "#",
-              },
-              {
-                title: "Card 3",
-                description: "This is a description",
-                image: "https://via.placeholder.com/300x300",
-                alt: "placeholder",
-                link: "#",
-              },
-              {
-                title: "Card 4",
-                description: "This is a description",
-                image: "https://via.placeholder.com/300x300",
-                alt: "placeholder",
-                link: "#",
-              },
-              {
-                title: "Card 5",
-                description: "This is a description",
-                image: "https://via.placeholder.com/300x300",
-                alt: "placeholder",
-                link: "#",
-              },
-              {
-                title: "Card 6",
-                description: "This is a description",
-                image: "https://via.placeholder.com/300x300",
-                alt: "placeholder",
-                link: "#",
-              },
-            ]}
-          />
+          <Carousel title="Experience" entryId="3keK3EDY9zJEEe9xC6oMLm" />
+          <Carousel title="Projects" entryId="7ec6zbm4U8fPusdTSCmOML" />
         </Flex>
         <Divider />
         <Flex w="full" minH={100}>

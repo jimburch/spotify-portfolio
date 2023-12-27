@@ -12,13 +12,13 @@ export default function SlimCard({ image, alt, title, link }: SlimCardProps) {
   return (
     <Suspense fallback={<Skeleton height={65} borderRadius="md" />}>
       <Flex
-        h={65}
+        h="60px"
         overflow="hidden"
         borderRadius="md"
         bg="brand.gray.base"
         align="center"
       >
-        <Box h="full" w={65}>
+        <Box h="full" w="60px">
           <Image
             src={image}
             alt={alt}
