@@ -1,4 +1,4 @@
-import { Carousel, SlimGrid } from "@/components";
+import { Carousel, Hero, SlimGrid } from "@/components";
 import { GAP, scrollbar } from "@/constants";
 import { timeOfDay } from "@/helpers/time";
 import { Center, Divider, Flex, Heading } from "@chakra-ui/react";
@@ -25,14 +25,7 @@ export default function Home() {
           p={{ base: 0, lg: GAP }}
           gap={4}
         >
-          <Center
-            minH={{ base: 175, lg: 275 }}
-            mx={{ base: 4, lg: 0 }}
-            bg="brand.green"
-            borderRadius="md"
-          >
-            Welcome image
-          </Center>
+          <Hero />
           <Heading mx={{ base: 4, lg: 0 }}>{`Good ${timeOfDay()}`}</Heading>
           <SlimGrid />
           <Carousel title="Experience" entryId="3keK3EDY9zJEEe9xC6oMLm" />
