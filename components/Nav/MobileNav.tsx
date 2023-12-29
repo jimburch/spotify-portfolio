@@ -5,13 +5,7 @@ const MIN = 100;
 
 export default function MobileNav() {
   return (
-    <Flex
-      bg="brand.gray.dark"
-      gap={GAP}
-      display={{ base: "flex", lg: "none" }}
-      py={4}
-      pl={4}
-    >
+    <Flex gap={GAP} display={{ base: "flex", lg: "none" }} py={4} pl={4}>
       <Avatar size="md" />
       <Flex align="center" gap={GAP} overflowX="auto" sx={hiddenScrollbar}>
         <Button as={Link} href="/" minW={MIN}>

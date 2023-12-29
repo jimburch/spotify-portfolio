@@ -6,6 +6,7 @@ import SlimGrid from "./SlimGrid/SlimGrid";
 import Hero from "./Hero/Hero";
 import BlogList from "./Blog/BlogList";
 import BlogCard from "./Blog/BlogCard";
+import Footer from "./Footer/Footer";
 
 export {
   Carousel,
@@ -16,4 +17,5 @@ export {
   Hero,
   BlogList,
   BlogCard,
+  Footer,
 };

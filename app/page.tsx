@@ -1,4 +1,4 @@
-import { Carousel, Hero, SlimGrid } from "@/components";
+import { Carousel, Footer, Hero, SlimGrid } from "@/components";
 import { GAP, scrollbar } from "@/constants";
 import { timeOfDay } from "@/helpers/time";
 import { Divider, Flex, Heading } from "@chakra-ui/react";
@@ -31,10 +31,7 @@ export default function Home() {
           <Carousel title="Experience" entryId="3keK3EDY9zJEEe9xC6oMLm" />
           <Carousel title="Projects" entryId="7ec6zbm4U8fPusdTSCmOML" />
         </Flex>
-        <Divider />
-        <Flex w="full" minH={100}>
-          Footer
-        </Flex>
+        <Footer />
       </Flex>
     </>
   );
