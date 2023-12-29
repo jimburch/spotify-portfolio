@@ -1,7 +1,7 @@
 import { Flex, Heading } from "@chakra-ui/react";
 import Card from "../Card/Card";
 import { hiddenScrollbar } from "@/constants";
-import fetchContentfulEntry from "@/utils/contentful";
+import { fetchContentfulEntry } from "@/utils/contentful";
 
 interface CarouselProps {
   title: string;

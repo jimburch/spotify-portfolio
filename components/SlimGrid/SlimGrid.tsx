@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { SimpleGrid, Skeleton } from "@chakra-ui/react";
 import { SlimCard } from "..";
 import { GAP } from "@/constants";
-import fetchContentfulEntry from "@/utils/contentful";
+import { fetchContentfulEntry } from "@/utils/contentful";
 
 export default async function SlimGrid() {
   const data = await fetchContentfulEntry("4q4bguomgV7FV9HIo5PSk4");

@@ -4,5 +4,16 @@ import Nav from "./Nav/Nav";
 import MobileNav from "./Nav/MobileNav";
 import SlimGrid from "./SlimGrid/SlimGrid";
 import Hero from "./Hero/Hero";
+import BlogList from "./Blog/BlogList";
+import BlogCard from "./Blog/BlogCard";
 
-export { Carousel, SlimCard, Nav, MobileNav, SlimGrid, Hero };
+export {
+  Carousel,
+  SlimCard,
+  Nav,
+  MobileNav,
+  SlimGrid,
+  Hero,
+  BlogList,
+  BlogCard,
+};

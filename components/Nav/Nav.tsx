@@ -1,5 +1,9 @@
 import { GAP, scrollbar } from "@/constants";
-import { Box, Flex, Heading, VStack } from "@chakra-ui/react";
+import { Box, Flex, Heading, VStack, Link } from "@chakra-ui/react";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faHouse, faLayerGroup } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { BlogList } from "..";
 
 export default function Nav() {
   return (
@@ -13,11 +17,20 @@ export default function Nav() {
       gap={GAP}
       display={{ base: "none", lg: "flex" }}
     >
-      <Box w="full" bg="brand.gray.dark" borderRadius="md" p={GAP}>
-        <VStack spacing={GAP} alignItems="start">
-          <Heading>Home</Heading>
-          <Heading>Github</Heading>
-          <Heading>LinkedIn</Heading>
+      <Box w="full" bg="brand.gray.dark" borderRadius="md" p={5}>
+        <VStack spacing={5} alignItems="start">
+          <Flex as={Link} href="/" align="center" gap={GAP}>
+            <FontAwesomeIcon height={25} icon={faHouse} />
+            <Heading size="md">Home</Heading>
+          </Flex>
+          <Flex as={Link} href="https://github.com" align="center" gap={GAP}>
+            <FontAwesomeIcon height={25} icon={faGithub} />
+            <Heading size="md">GitHub</Heading>
+          </Flex>
+          <Flex as={Link} href="https://github.com" align="center" gap={GAP}>
+            <FontAwesomeIcon height={25} icon={faLinkedin} />
+            <Heading size="md">LinkedIn</Heading>
+          </Flex>
         </VStack>
       </Box>
       <Box
@@ -25,11 +38,15 @@ export default function Nav() {
         height="full"
         bg="brand.gray.dark"
         borderRadius="md"
-        p={GAP}
+        p={5}
         overflowY="auto"
         sx={scrollbar}
       >
-        Other Stuff
+        <Flex align="center" gap={GAP}>
+          <FontAwesomeIcon height={25} icon={faLayerGroup} />
+          <Heading size="md">ChangeBlog</Heading>
+        </Flex>
+        <BlogList />
       </Box>
     </Flex>
   );

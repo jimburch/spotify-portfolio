@@ -1,5 +1,5 @@
 import { GAP } from "@/constants";
-import fetchContentfulEntry from "@/utils/contentful";
+import { fetchContentfulEntry } from "@/utils/contentful";
 import { Center, Flex, Heading, Image } from "@chakra-ui/react";
 
 export default async function Hero() {

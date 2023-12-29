@@ -1,7 +1,7 @@
 import { Carousel, Hero, SlimGrid } from "@/components";
 import { GAP, scrollbar } from "@/constants";
 import { timeOfDay } from "@/helpers/time";
-import { Center, Divider, Flex, Heading } from "@chakra-ui/react";
+import { Divider, Flex, Heading } from "@chakra-ui/react";
 
 export default function Home() {
   return (
