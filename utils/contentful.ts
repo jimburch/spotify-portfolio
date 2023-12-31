@@ -20,9 +20,14 @@ export async function fetchContentfulEntry(entryId: string): Promise<any> {
 
 export async function fetchContentfulEntries(
   contentType: string,
+  field?: string,
+  value?: string,
 ): Promise<any> {
   try {
-    const entries = await client.getEntries({ content_type: contentType });
+    const entries = await client.getEntries({
+      content_type: contentType,
+      ...(field && value && { [`fields.${field}`]: value }),
+    });
     if (!entries) {
       throw new Error("No entries found");
     }

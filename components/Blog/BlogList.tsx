@@ -4,7 +4,6 @@ import { BlogCard } from "..";
 
 export default async function BlogList() {
   const data = await fetchContentfulEntries("blogPost");
-  console.log(data.items);
   const posts = data.items;
 
   return (

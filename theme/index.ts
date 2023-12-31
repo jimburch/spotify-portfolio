@@ -6,9 +6,11 @@ export const theme = extendTheme({
       green: "#1DB954",
       black: "#121212",
       gray: {
-        base: "#535353",
-        dark: "#212121",
         light: "#B3B3B3",
+        soft: "#838383",
+        base: "#535353",
+        medium: "#3a3a3a",
+        dark: "#212121",
       },
     },
   },
