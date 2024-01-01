@@ -7,6 +7,7 @@ import Hero from "./Hero/Hero";
 import BlogList from "./Blog/BlogList";
 import BlogCard from "./Blog/BlogCard";
 import Footer from "./Footer/Footer";
+import NavButtons from "./Nav/NavButtons";
 
 export {
   Carousel,
@@ -18,4 +19,5 @@ export {
   BlogList,
   BlogCard,
   Footer,
+  NavButtons,
 };

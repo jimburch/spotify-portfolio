@@ -1,3 +1,4 @@
+import { NavButtons } from "@/components";
 import { fetchContentfulEntries } from "@/utils/contentful";
 import { options } from "@/utils/richContent";
 import { Box, Heading, VStack } from "@chakra-ui/react";
@@ -22,7 +23,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const data = await getData(params.slug);
 
   return (
-    <Box>
+    <Box px={4}>
+      <NavButtons />
       <Heading mb={4}>{data.title}</Heading>
       <VStack align="start" spacing={4}>
         {documentToReactComponents(data.description, options)}

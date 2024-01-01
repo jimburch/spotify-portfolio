@@ -1,4 +1,4 @@
-import { Carousel, Hero, SlimGrid } from "@/components";
+import { Carousel, Hero, NavButtons, SlimGrid } from "@/components";
 import { timeOfDay } from "@/helpers/time";
 import { Heading } from "@chakra-ui/react";
 
