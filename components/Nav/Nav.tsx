@@ -44,7 +44,7 @@ export default function Nav() {
       >
         <Flex align="center" gap={GAP}>
           <FontAwesomeIcon height={25} icon={faLayerGroup} />
-          <Heading size="md">ChangeBlog</Heading>
+          <Heading size="md">Changeblog</Heading>
         </Flex>
         <BlogList />
       </Box>

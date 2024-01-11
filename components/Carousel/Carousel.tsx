@@ -16,7 +16,7 @@ export default async function Carousel({ title, entryId }: CarouselProps) {
     <Flex direction="column" gap={4}>
       <Heading mx={{ base: 4, lg: 0 }}>{title}</Heading>
       <Flex
-        gap={4}
+        gap={{ base: 2, lg: 4 }}
         overflowX={{ base: "auto", lg: "inherit" }}
         sx={hiddenScrollbar}
         pl={{ base: 4, lg: 0 }}

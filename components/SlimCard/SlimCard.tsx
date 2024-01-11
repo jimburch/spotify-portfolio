@@ -1,13 +1,6 @@
-import {
-  Box,
-  Flex,
-  Image,
-  LinkOverlay,
-  Skeleton,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import Link from "next/link";
-import { Suspense } from "react";
+import Image from "next/image";
 
 export interface SlimCardProps {
   image: string;
@@ -18,7 +11,6 @@ export interface SlimCardProps {
 
 export default function SlimCard({ image, alt, title, slug }: SlimCardProps) {
   return (
-    // <Suspense fallback={<Skeleton height={65} borderRadius="md" />}>
     <Link href={`/about/${slug}`}>
       <Flex
         h="60px"
@@ -31,20 +23,13 @@ export default function SlimCard({ image, alt, title, slug }: SlimCardProps) {
           _active: { bg: "brand.gray.soft" },
         }}
       >
-        <Box h="full" w="60px">
-          <Image
-            src={image}
-            alt={alt}
-            h="full"
-            objectFit="cover"
-            bg="brand.gray.light"
-          />
+        <Box w="60px" h="full" overflow="hidden" position="relative">
+          <Image src={image} alt={alt} fill style={{ objectFit: "cover" }} />
         </Box>
         <Text p={4} fontWeight="bold">
           {title}
         </Text>
       </Flex>
     </Link>
-    // </Suspense>
   );
 }

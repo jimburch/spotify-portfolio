@@ -1,5 +1,4 @@
-import { Suspense } from "react";
-import { LinkOverlay, SimpleGrid, Skeleton } from "@chakra-ui/react";
+import { SimpleGrid, Skeleton } from "@chakra-ui/react";
 import { SlimCard } from "..";
 import { GAP } from "@/constants";
 import { fetchContentfulEntry } from "@/utils/contentful";
@@ -21,7 +20,6 @@ export default async function SlimGrid(props: any) {
   );
 
   return (
-    // <Suspense fallback={<SlimGridSkeleton />}>
     <SimpleGrid
       columns={{ lg: 3, md: 2 }}
       spacing={GAP}
@@ -30,14 +28,13 @@ export default async function SlimGrid(props: any) {
       {cards.map((card: any, i: number) => (
         <SlimCard
           key={i}
-          image={card.fields.image.fields.file.url}
+          image={`https:${card.fields.image.fields.file.url}`}
           alt={card.fields.image.fields.title}
           title={card.fields.title}
           slug={card.fields.slug}
         />
       ))}
     </SimpleGrid>
-    // </Suspense>
   );
 }
 

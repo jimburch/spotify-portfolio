@@ -1,5 +1,6 @@
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
-import { Text, Image, Heading, Code } from "@chakra-ui/react";
+import { Text, Heading, Code } from "@chakra-ui/react";
+import Image from "next/image";
 
 const Heading1 = ({ children }: any) => (
   <Heading size="xl" as="h1">
@@ -37,9 +38,9 @@ const CodeText = ({ children }: any) => <Code>{children}</Code>;
 
 const EmbeddedAsset = ({ node }: any) => {
   const { file, title } = node.data.target.fields;
-  const imageUrl = file.url;
+  const imageUrl = `https:${file.url}`;
 
-  return <Image src={imageUrl} alt={title} />;
+  return <Image src={imageUrl} alt={title} width={500} height={300} />;
 };
 
 export const options = {

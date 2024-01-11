@@ -17,7 +17,10 @@ export default function BlogCard({ image, title, date, link }: BlogCardProps) {
       gap={GAP}
       p={GAP}
       borderRadius="md"
-      sx={{ _hover: { bg: "brand.gray.base" } }}
+      sx={{
+        _hover: { bg: "brand.gray.base" },
+        _active: { bg: "brand.gray.soft" },
+      }}
     >
       <Image
         src={image}
