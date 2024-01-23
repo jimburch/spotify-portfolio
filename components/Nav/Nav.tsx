@@ -20,15 +20,30 @@ export default function Nav() {
       <Box w="full" bg="brand.gray.dark" borderRadius="md" p={5}>
         <VStack spacing={5} alignItems="start">
           <Flex as={Link} href="/" align="center" gap={GAP}>
-            <FontAwesomeIcon height={25} icon={faHouse} />
+            <FontAwesomeIcon
+              fontSize={25}
+              height={25}
+              width={25}
+              icon={faHouse}
+            />
             <Heading size="md">Home</Heading>
           </Flex>
           <Flex as={Link} href="https://github.com" align="center" gap={GAP}>
-            <FontAwesomeIcon height={25} icon={faGithub} />
+            <FontAwesomeIcon
+              fontSize={25}
+              height={25}
+              width={25}
+              icon={faGithub}
+            />
             <Heading size="md">GitHub</Heading>
           </Flex>
           <Flex as={Link} href="https://github.com" align="center" gap={GAP}>
-            <FontAwesomeIcon height={25} icon={faLinkedin} />
+            <FontAwesomeIcon
+              fontSize={25}
+              height={25}
+              width={25}
+              icon={faLinkedin}
+            />
             <Heading size="md">LinkedIn</Heading>
           </Flex>
         </VStack>
@@ -43,7 +58,12 @@ export default function Nav() {
         sx={scrollbar}
       >
         <Flex align="center" gap={GAP}>
-          <FontAwesomeIcon height={25} icon={faLayerGroup} />
+          <FontAwesomeIcon
+            fontSize={25}
+            height={25}
+            width={25}
+            icon={faLayerGroup}
+          />
           <Heading size="md">Changeblog</Heading>
         </Flex>
         <BlogList />

@@ -1,4 +1,4 @@
-import { Flex, Heading } from "@chakra-ui/react";
+import { Flex, Heading, Link } from "@chakra-ui/react";
 import Card from "../Card/Card";
 import { hiddenScrollbar } from "@/constants";
 import { fetchContentfulEntry } from "@/utils/contentful";
@@ -24,14 +24,15 @@ export default async function Carousel({ title, entryId }: CarouselProps) {
         {cards.map((card: any, i: number) => {
           const cardFields = card.fields;
           return (
-            <Card
-              key={i}
-              image={`https:${cardFields.image.fields.file.url}`}
-              alt={cardFields.title}
-              title={cardFields.title}
-              description={cardFields.description}
-              link={cardFields.link}
-            />
+            <Link href={`/experience/${cardFields.slug}`} key={i}>
+              <Card
+                image={`https:${cardFields.image.fields.file.url}`}
+                alt={cardFields.title}
+                title={cardFields.title}
+                description={cardFields.description}
+                link={cardFields.link}
+              />
+            </Link>
           );
         })}
       </Flex>
